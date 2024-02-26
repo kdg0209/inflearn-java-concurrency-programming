@@ -16,7 +16,7 @@ public class CPUBoundExample {
         List<CompletableFuture> futures = new ArrayList<>();
 
         for (int i = 0; i < cpuCore; i++) {
-            CompletableFuture<Void> voidCompletableFuture = CompletableFuture.runAsync(() -> {
+            CompletableFuture.runAsync(() -> {
                 // CPU 연산이에 집중되고 오래걸리는 작업 (CPU 버스트)
                 long result = 0L;
                 for (int j = 0; j < Integer.MAX_VALUE; j++) {
